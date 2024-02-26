@@ -1,0 +1,107 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-02-26 20:28:41.250775",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "general_section",
+  "target_app",
+  "column_break_yxpc",
+  "language",
+  "step_1_section",
+  "btn_generate_pot",
+  "section_2_section",
+  "btn_new_po",
+  "btn_update_po",
+  "btn_csv_to_po",
+  "section_3_section",
+  "btn_compile_translations"
+ ],
+ "fields": [
+  {
+   "fieldname": "target_app",
+   "fieldtype": "Select",
+   "label": "Target App"
+  },
+  {
+   "fieldname": "language",
+   "fieldtype": "Link",
+   "label": "Language",
+   "options": "Language"
+  },
+  {
+   "fieldname": "column_break_yxpc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "general_section",
+   "fieldtype": "Section Break",
+   "label": "General"
+  },
+  {
+   "fieldname": "step_1_section",
+   "fieldtype": "Section Break",
+   "label": "Step 1"
+  },
+  {
+   "fieldname": "btn_generate_pot",
+   "fieldtype": "Button",
+   "label": "Generate main.pot file"
+  },
+  {
+   "fieldname": "section_2_section",
+   "fieldtype": "Section Break",
+   "label": "Section 2"
+  },
+  {
+   "fieldname": "btn_new_po",
+   "fieldtype": "Button",
+   "label": "New .po file"
+  },
+  {
+   "fieldname": "btn_update_po",
+   "fieldtype": "Button",
+   "label": "Update .po file"
+  },
+  {
+   "fieldname": "btn_csv_to_po",
+   "fieldtype": "Button",
+   "label": "Migrate .csv to .po"
+  },
+  {
+   "fieldname": "section_3_section",
+   "fieldtype": "Section Break",
+   "label": "Section 3"
+  },
+  {
+   "fieldname": "btn_compile_translations",
+   "fieldtype": "Button",
+   "label": "Compile Translation"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-02-26 21:15:20.197413",
+ "modified_by": "Administrator",
+ "module": "Frappe Translate",
+ "name": "Translate Wizard",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

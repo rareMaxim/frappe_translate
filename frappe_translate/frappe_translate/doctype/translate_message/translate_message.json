@@ -1,0 +1,69 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-02-26 21:37:28.779979",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "column_break_xbzk",
+  "string",
+  "column_break_brkj",
+  "context"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title"
+  },
+  {
+   "fieldname": "string",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "String"
+  },
+  {
+   "fieldname": "context",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Context"
+  },
+  {
+   "fieldname": "column_break_xbzk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_brkj",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_virtual": 1,
+ "links": [],
+ "modified": "2024-02-26 22:12:29.350901",
+ "modified_by": "Administrator",
+ "module": "Frappe Translate",
+ "name": "Translate Message",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title"
+}
