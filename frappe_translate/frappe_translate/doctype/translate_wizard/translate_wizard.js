@@ -56,6 +56,21 @@ function generate_pot(frm) {
                 message: __('Generate main.pot file: done'),
                 indicator: 'green'
             }, 5);
+            get_pot_path(frm);
+        }
+    });
+}
+function get_pot_path(frm) {
+    frappe.call({
+        method: "frappe_translate.frappe_translate.doctype.translate_wizard.translate_wizard.get_pot_path",
+        args: {
+            "app": frm.doc.target_app,
+        },
+        callback: (r) => {
+            console.log(r.message);
+            var indicator = (r.message.exists) ? ' 🟢' :' 🔴';
+            frm.set_df_property("btn_generate_pot", "description", r.message.path.concat(indicator));
+            
         }
     });
 }
@@ -115,12 +130,13 @@ frappe.ui.form.on("Translate Wizard", {
     refresh(frm) {
         fill_installed_app(frm);
         fill_po_locales(frm);
+        get_pot_path(frm);
     },
     test(frm) {
         test_catalog(frm);
     },
     btn_generate_pot(frm) {
-        generate_pot(frm)
+        generate_pot(frm);
     },
     target_app(frm) {
         fill_po_locales(frm);

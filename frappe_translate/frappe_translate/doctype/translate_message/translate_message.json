@@ -5,44 +5,117 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "title",
+  "section_break_iqnu",
+  "id",
   "column_break_xbzk",
   "string",
-  "column_break_brkj",
-  "context"
+  "section_break_qifp",
+  "context",
+  "column_break_akgp",
+  "lineno",
+  "section_break_zdhv",
+  "user_comments",
+  "column_break_ufig",
+  "auto_comments",
+  "section_break_imaw",
+  "locations",
+  "dev_tab",
+  "wizard"
  ],
  "fields": [
   {
-   "fieldname": "title",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Title"
-  },
-  {
    "fieldname": "string",
-   "fieldtype": "Data",
+   "fieldtype": "HTML Editor",
    "in_list_view": 1,
-   "label": "String"
+   "in_standard_filter": 1,
+   "label": "Translation"
   },
   {
+   "description": "DO NOT EDIT!",
    "fieldname": "context",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Context"
+   "in_standard_filter": 1,
+   "label": "Context",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_xbzk",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_brkj",
+   "fieldname": "section_break_iqnu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_zdhv",
+   "fieldtype": "Section Break",
+   "label": "Coments"
+  },
+  {
+   "description": "DO NOT EDIT!",
+   "fieldname": "wizard",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "\ud83e\uddd9\u200d\u2642\ufe0f Wizard",
+   "options": "Translate Wizard",
+   "read_only": 1
+  },
+  {
+   "description": "DO NOT EDIT!",
+   "fieldname": "id",
+   "fieldtype": "HTML Editor",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Source text"
+  },
+  {
+   "fieldname": "section_break_qifp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "user_comments",
+   "fieldtype": "Code",
+   "label": "user_comments"
+  },
+  {
+   "fieldname": "dev_tab",
+   "fieldtype": "Tab Break",
+   "label": "dev"
+  },
+  {
+   "fieldname": "auto_comments",
+   "fieldtype": "Code",
+   "label": "auto_comments",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ufig",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_imaw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "locations",
+   "fieldtype": "Code",
+   "label": "locations"
+  },
+  {
+   "fieldname": "column_break_akgp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lineno",
+   "fieldtype": "Int",
+   "label": "lineno"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_virtual": 1,
  "links": [],
- "modified": "2024-02-26 22:12:29.350901",
+ "modified": "2024-02-28 00:34:09.889873",
  "modified_by": "Administrator",
  "module": "Frappe Translate",
  "name": "Translate Message",
@@ -65,5 +138,5 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "title"
+ "title_field": "id"
 }

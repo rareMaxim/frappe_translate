@@ -33,6 +33,16 @@ def generate_pot(target_app: str | None = None):
         }
 
 @frappe.whitelist()
+def get_pot_path(app: str) -> str:
+    from frappe.gettext.translate import get_pot_path
+    path = get_pot_path(app)
+    
+    return {
+        "path": str(path),
+        "exists": path.exists(),
+        }
+    
+@frappe.whitelist()
 def csv_to_po(app: str | None = None, locale: str | None = None):
     from frappe.gettext.translate import migrate
     response = {}
