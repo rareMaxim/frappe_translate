@@ -68,14 +68,42 @@ function get_pot_path(frm) {
         },
         callback: (r) => {
             console.log(r.message);
-            var indicator = (r.message.exists) ? ' 🟢' :' 🔴';
+            var indicator = (r.message.exists) ? ' 🟢' : ' 🔴';
             frm.set_df_property("btn_generate_pot", "description", r.message.path.concat(indicator));
-            
+
         }
     });
 }
+function get_po_path(frm) {
+    frappe.call({
+        method: "frappe_translate.frappe_translate.doctype.translate_wizard.translate_wizard.get_po_path",
+        args: {
+            "app": frm.doc.target_app,
+            "locale": frm.doc.language,
+        },
+        callback: (r) => {
+            console.log(r.message);
+            var indicator = (r.message.exists) ? ' 🟢' : ' 🔴';
+            frm.set_df_property("btn_new_po", "description", r.message.path.concat(indicator));
 
+        }
+    });
+}
+function get_csv_path(frm) {
+    frappe.call({
+        method: "frappe_translate.frappe_translate.doctype.translate_wizard.translate_wizard.get_csv_path",
+        args: {
+            "app": frm.doc.target_app,
+            "locale": frm.doc.language,
+        },
+        callback: (r) => {
+            console.log(r.message);
+            var indicator = (r.message.exists) ? ' 🟢' : ' 🔴';
+            frm.set_df_property("btn_csv_to_po", "description", r.message.path.concat(indicator));
 
+        }
+    });
+}
 function new_po(frm) {
     frappe.call({
         method: "frappe_translate.frappe_translate.doctype.translate_wizard.translate_wizard.new_po",
@@ -84,6 +112,7 @@ function new_po(frm) {
             "locale": frm.doc.language,
         },
         callback: (r) => {
+            get_po_path(frm);
             console.log(r);
             frappe.show_alert({
                 message: __('Generate main.pot file: done'),
@@ -108,6 +137,26 @@ function update_po(frm) {
         }
     });
 }
+
+function csv_to_po(frm) {
+    frappe.call({
+        method: "frappe_translate.frappe_translate.doctype.translate_wizard.translate_wizard.csv_to_po",
+        args: {
+            "app": frm.doc.target_app,
+            "locale": frm.doc.language,
+        },
+        callback: (r) => {
+            console.log(r);
+            var msg = r.message.method + ": " + r.message.app + " " + r.message.locale;
+            if (!r.message.is_ok) msg = msg + "</br>" + r.message.error;
+            frappe.show_alert({
+                message: msg,
+                indicator: r.message.is_ok ? 'green' : 'red'
+            }, 5);
+        }
+    });
+}
+
 function compile_translations(frm) {
     frappe.call({
         method: "frappe_translate.frappe_translate.doctype.translate_wizard.translate_wizard.compile_translations",
@@ -131,6 +180,8 @@ frappe.ui.form.on("Translate Wizard", {
         fill_installed_app(frm);
         fill_po_locales(frm);
         get_pot_path(frm);
+        get_po_path(frm);
+        get_csv_path(frm);
     },
     test(frm) {
         test_catalog(frm);
@@ -150,4 +201,5 @@ frappe.ui.form.on("Translate Wizard", {
     btn_update_po(frm) {
         update_po(frm);
     },
+    btn_csv_to_po(frm) { csv_to_po(frm) },
 });

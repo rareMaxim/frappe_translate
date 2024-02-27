@@ -33,7 +33,7 @@ def generate_pot(target_app: str | None = None):
         }
 
 @frappe.whitelist()
-def get_pot_path(app: str) -> str:
+def get_pot_path(app: str):
     from frappe.gettext.translate import get_pot_path
     path = get_pot_path(app)
     
@@ -41,7 +41,24 @@ def get_pot_path(app: str) -> str:
         "path": str(path),
         "exists": path.exists(),
         }
+@frappe.whitelist()
+def get_po_path(app: str, locale: str | None = None):
+    from frappe.gettext.translate import get_po_path
+    path = get_po_path(app, locale)
+    return {
+        "path": str(path),
+        "exists": path.exists(),
+        }
     
+@frappe.whitelist()
+def get_csv_path(app: str, locale: str | None = None):
+    from pathlib import Path
+    path = Path(frappe.get_app_path(app)) / "translations" / f"{locale.replace('_', '-')}.csv"
+    return {
+        "path": str(path),
+        "exists": path.exists(),
+        }
+            
 @frappe.whitelist()
 def csv_to_po(app: str | None = None, locale: str | None = None):
     from frappe.gettext.translate import migrate

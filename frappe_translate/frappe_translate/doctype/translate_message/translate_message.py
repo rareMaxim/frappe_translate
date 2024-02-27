@@ -11,9 +11,9 @@ from frappe.utils.data import cint
 class TranslateMessage(Document):
 	
 	@staticmethod
-	def get_catalog()->Catalog:
+	def get_catalog() -> Catalog:
 		(target_app, locale) = get_current_app_lang()
-		catalog = list(get_catalog (target_app, locale)) 
+		catalog = get_catalog(target_app, locale)
 		i = 0
 		for msg in catalog:
 			setattr(msg, "name", str(i))

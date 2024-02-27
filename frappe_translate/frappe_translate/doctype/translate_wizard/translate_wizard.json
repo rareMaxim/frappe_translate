@@ -13,7 +13,9 @@
   "btn_generate_pot",
   "section_2_section",
   "btn_new_po",
+  "column_break_zryk",
   "btn_update_po",
+  "column_break_ltse",
   "btn_csv_to_po",
   "section_3_section",
   "btn_compile_translations"
@@ -78,11 +80,19 @@
    "fieldname": "btn_compile_translations",
    "fieldtype": "Button",
    "label": "Compile Translation"
+  },
+  {
+   "fieldname": "column_break_zryk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ltse",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-26 21:15:20.197413",
+ "modified": "2024-02-28 01:20:14.545001",
  "modified_by": "Administrator",
  "module": "Frappe Translate",
  "name": "Translate Wizard",
