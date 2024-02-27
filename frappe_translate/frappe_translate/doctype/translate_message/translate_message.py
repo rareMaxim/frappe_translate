@@ -24,7 +24,6 @@ class TranslateMessage(Document):
 		pass
 
 	def load_from_db(self):
-		d = self.get_valid_dict(convert_dates_to_str=True)
 		catalog = TranslateMessage.get_catalog()
 		id = int(self.name)
 		d = serialize_message(list(catalog)[id])
@@ -61,23 +60,21 @@ class TranslateMessage(Document):
 				sort_order = "desc"
 
 			sort_key = sort_key.replace("`", "")
-			print(f"sort_key = {sort_key}, sort_order = {sort_order}")
 			return sorted(catalog, key=lambda r: r.get(sort_key) or "id", reverse=bool(sort_order == "desc"))
 		return sorted(catalog, key=lambda r: r.duration, reverse=1)
 
 	@staticmethod
 	def get_count(args):
-		update_selected_wizard(args)
 		return len(TranslateMessage.get_filtered_requests(args))
 
 	@staticmethod
 	def get_stats(args):
-		update_selected_wizard(args)
-		return
+		pass
 
 	@staticmethod
 	def get_filtered_requests(args):
 		from frappe.utils import evaluate_filters
+		wizard = update_selected_wizard(args)
 		filters = args.get("filters")
 		messages = [serialize_message(message) for message in TranslateMessage.get_catalog() if message.id]
 		return [msg for msg in messages if evaluate_filters(msg, filters)]
@@ -91,7 +88,6 @@ def get_current_app_lang():
 
 def serialize_message(msg: Message):
 	return ({
-		# "name": f'{msg.context} {msg.id}',
   		"name": msg.name,
 		"id": msg.id,
 		"string": msg.string,
@@ -107,32 +103,7 @@ def serialize_message(msg: Message):
 	})
  
 def update_selected_wizard(args)->str:
-#  {'doctype': 'Translate Message', 'fields': ['`tabTranslate Message`.`name`', '`tabTranslate Message`.`owner`', '`tabTranslate Message`.`creation`', 
-# '`tabTranslate Message`.`modified`', '`tabTranslate Message`.`modified_by`', '`tabTranslate Message`.`_user_tags`', '`tabTranslate Message`.`_comments`', 
-# '`tabTranslate Message`.`_assign`', '`tabTranslate Message`.`_liked_by`', '`tabTranslate Message`.`docstatus`', '`tabTranslate Message`.`idx`', 
-# '`tabTranslate Message`.`context`', '`tabTranslate Message`.`title`', '`tabTranslate Message`.`string`'], 
-# 'filters': [['Translate Message', 'wizard', '=', 'Frappe Ukraine']], 'order_by': '`tabTranslate Message`.`title` asc', 'start': '0', 'page_length': '20', 
-# 'group_by': '`tabTranslate Message`.`name`', 'with_comment_count': '1', 'save_user_settings': True, 'strict': None}
 	for filter in args.filters:
 		if filter[1] == "wizard" and filter[2] == "=":
-			# e.g. ['WooCommerce Order', 'name', '=', '11']
-			# params['include'] = [filter[3]]
 			frappe.cache.hset("translate_wizard", frappe.session.user, filter[3])
-
-
-def apply_catalog_filter(catalog, filter):
-    pass
-
-def frappe_sort(obj_list:list, sort:str):
-	# `tabTranslate Message`.`title` asc
-	from operator import attrgetter
-	# ['', 'tabTranslate Message', '.', 'title', ' asc']
-	parts = sort.split('`')
-	return sorted(obj_list, key=attrgetter(parts[3]), reverse = parts[4].find('desc') >= 0)
-
-def _eval_filters(filter, values: list[str]) -> list[str]:
-	from frappe.utils import compare
-	if filter:
-		operator, operand = filter
-		return [val for val in values if compare(val, operator, operand)]
-	return values
+			return frappe.cache.hget("translate_wizard", frappe.session.user)
