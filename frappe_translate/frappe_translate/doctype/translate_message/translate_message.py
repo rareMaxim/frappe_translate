@@ -12,8 +12,10 @@ class TranslateMessage(Document):
 	
 	@staticmethod
 	def get_catalog() -> Catalog:
-		(target_app, locale) = get_current_app_lang()
-		catalog = get_catalog(target_app, locale)
+		catalog_data = get_current_app_lang()
+		if not catalog_data:
+			return None
+		catalog = get_catalog(catalog_data[0], catalog_data[1])
 		i = 0
 		for msg in catalog:
 			setattr(msg, "name", str(i))
@@ -65,7 +67,8 @@ class TranslateMessage(Document):
 
 	@staticmethod
 	def get_count(args):
-		return len(TranslateMessage.get_filtered_requests(args))
+		catalog = TranslateMessage.get_filtered_requests(args)
+		return len(catalog) if catalog else 0
 
 	@staticmethod
 	def get_stats(args):
@@ -76,11 +79,16 @@ class TranslateMessage(Document):
 		from frappe.utils import evaluate_filters
 		wizard = update_selected_wizard(args)
 		filters = args.get("filters")
+		catalog = TranslateMessage.get_catalog()
+		if not catalog:
+			return None
 		messages = [serialize_message(message) for message in TranslateMessage.get_catalog() if message.id]
 		return [msg for msg in messages if evaluate_filters(msg, filters)]
 
 def get_current_app_lang():
 	wizard = frappe.cache.hget("translate_wizard", frappe.session.user)
+	if not wizard:
+		return None
 	doc_wiz = frappe.get_doc("Translate Wizard", wizard)
 	target_app =  doc_wiz.get_value("target_app")
 	locale = doc_wiz.get_value("language")

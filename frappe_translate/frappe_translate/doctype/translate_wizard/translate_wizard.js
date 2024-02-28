@@ -131,7 +131,7 @@ function update_po(frm) {
         callback: (r) => {
             console.log(r);
             frappe.show_alert({
-                message: __('Generate main.pot file: done'),
+                message: __('Update .po file: done'),
                 indicator: 'green'
             }, 5);
         }
@@ -168,29 +168,53 @@ function compile_translations(frm) {
         callback: (r) => {
             console.log(r);
             frappe.show_alert({
-                message: __('Generate main.pot file: done'),
+                message: __('Compile translation: done'),
                 indicator: 'green'
             }, 5);
         }
     });
 }
+function set_as_default(frm) {
+    frm.add_custom_button('Set as default', () => {
+        frappe.call({
+            method: "frappe_translate.frappe_translate.doctype.translate_wizard.translate_wizard.set_user_project",
+            args: {
+                "wizard": frm.doc.name,
+            },
+            callback: (r) => {
+                console.log(r);
+                frappe.show_alert({
+                    message: __('Set wizard as default'),
+                    indicator: 'green'
+                }, 5);
+            }
+        });
+    })
+}
 
+function update_ui_info(frm) {
+    if ((frm.doc.target_app) && (frm.doc.language)) {
+        get_pot_path(frm);
+        get_po_path(frm);
+        get_csv_path(frm);
+    }
+}
 frappe.ui.form.on("Translate Wizard", {
     refresh(frm) {
         fill_installed_app(frm);
         fill_po_locales(frm);
-        get_pot_path(frm);
-        get_po_path(frm);
-        get_csv_path(frm);
+        set_as_default(frm);
+        update_ui_info(frm);
     },
-    test(frm) {
-        test_catalog(frm);
+    language(frm) {
+        update_ui_info(frm);
     },
     btn_generate_pot(frm) {
         generate_pot(frm);
     },
     target_app(frm) {
         fill_po_locales(frm);
+        update_ui_info(frm);
     },
     btn_new_po(frm) {
         new_po(frm);
@@ -201,5 +225,7 @@ frappe.ui.form.on("Translate Wizard", {
     btn_update_po(frm) {
         update_po(frm);
     },
-    btn_csv_to_po(frm) { csv_to_po(frm) },
+    btn_csv_to_po(frm) {
+        csv_to_po(frm)
+    },
 });

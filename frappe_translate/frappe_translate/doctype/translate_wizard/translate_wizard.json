@@ -11,13 +11,13 @@
   "language",
   "step_1_section",
   "btn_generate_pot",
-  "section_2_section",
+  "step_2_section",
   "btn_new_po",
   "column_break_zryk",
   "btn_update_po",
   "column_break_ltse",
   "btn_csv_to_po",
-  "section_3_section",
+  "step_3_section",
   "btn_compile_translations"
  ],
  "fields": [
@@ -52,11 +52,6 @@
    "label": "Generate main.pot file"
   },
   {
-   "fieldname": "section_2_section",
-   "fieldtype": "Section Break",
-   "label": "Section 2"
-  },
-  {
    "fieldname": "btn_new_po",
    "fieldtype": "Button",
    "label": "New .po file"
@@ -72,11 +67,6 @@
    "label": "Migrate .csv to .po"
   },
   {
-   "fieldname": "section_3_section",
-   "fieldtype": "Section Break",
-   "label": "Section 3"
-  },
-  {
    "fieldname": "btn_compile_translations",
    "fieldtype": "Button",
    "label": "Compile Translation"
@@ -88,11 +78,21 @@
   {
    "fieldname": "column_break_ltse",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "step_2_section",
+   "fieldtype": "Section Break",
+   "label": "Step 2"
+  },
+  {
+   "fieldname": "step_3_section",
+   "fieldtype": "Section Break",
+   "label": "Step 3"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-28 01:20:14.545001",
+ "modified": "2024-02-28 12:26:21.937788",
  "modified_by": "Administrator",
  "module": "Frappe Translate",
  "name": "Translate Wizard",

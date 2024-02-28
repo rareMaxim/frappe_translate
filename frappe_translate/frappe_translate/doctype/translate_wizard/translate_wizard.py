@@ -100,7 +100,8 @@ def update_po(target_app: str | None = None, locale: str | None = None):
 def compile_translations(target_app: str | None  = None, locale: str | None = None, force=False):
     from frappe.gettext.translate import compile_translations
     compile_translations(target_app = target_app, locale = locale, force = force)    
+    frappe.clear_cache()
     
 @frappe.whitelist()
-def set_user_project(user, wizard: str):
+def set_user_project(wizard: str):
     frappe.cache.hset("translate_wizard", frappe.session.user, wizard)
