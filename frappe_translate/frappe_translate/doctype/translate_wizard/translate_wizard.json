@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{target_app}-{language}",
  "creation": "2024-02-26 20:28:41.250775",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -92,10 +93,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-28 12:26:21.937788",
+ "modified": "2024-02-28 20:51:30.825985",
  "modified_by": "Administrator",
  "module": "Frappe Translate",
  "name": "Translate Wizard",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

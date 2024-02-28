@@ -174,22 +174,16 @@ function compile_translations(frm) {
         }
     });
 }
-function set_as_default(frm) {
-    frm.add_custom_button('Set as default', () => {
-        frappe.call({
-            method: "frappe_translate.frappe_translate.doctype.translate_wizard.translate_wizard.set_user_project",
-            args: {
-                "wizard": frm.doc.name,
-            },
-            callback: (r) => {
-                console.log(r);
-                frappe.show_alert({
-                    message: __('Set wizard as default'),
-                    indicator: 'green'
-                }, 5);
-            }
+
+
+function navigate_to_messages(frm) {
+    frm.add_custom_button(__("Go to translations"), () => {
+        frappe.set_route("list", "Translate Message", {
+            wizard: frm.doc.name,
         });
-    })
+    });
+    frm.change_custom_button_type(__("Go to translations"), null, 'primary');
+
 }
 
 function update_ui_info(frm) {
@@ -203,8 +197,8 @@ frappe.ui.form.on("Translate Wizard", {
     refresh(frm) {
         fill_installed_app(frm);
         fill_po_locales(frm);
-        set_as_default(frm);
         update_ui_info(frm);
+        navigate_to_messages(frm);
     },
     language(frm) {
         update_ui_info(frm);
