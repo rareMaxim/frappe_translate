@@ -1,0 +1,197 @@
+# Translations template for Frappe Translate.
+# Copyright (C) 2024 Maxim S
+# This file is distributed under the same license as the Frappe Translate project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Frappe Translate VERSION\n"
+"Report-Msgid-Bugs-To: maks4a@gmail.com\n"
+"POT-Creation-Date: 2024-02-28 10:26+0000\n"
+"PO-Revision-Date: 2024-02-28 10:26+0000\n"
+"Last-Translator: maks4a@gmail.com\n"
+"Language-Team: maks4a@gmail.com\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#. Label of a Section Break field in DocType 'Translate Message'
+#: frappe_translate/doctype/translate_message/translate_message.json
+msgctxt "Translate Message"
+msgid "Coments"
+msgstr ""
+
+#. Label of a Button field in DocType 'Translate Wizard'
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgctxt "Translate Wizard"
+msgid "Compile Translation"
+msgstr ""
+
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:171
+msgid "Compile translation: done"
+msgstr ""
+
+#. Label of a Data field in DocType 'Translate Message'
+#: frappe_translate/doctype/translate_message/translate_message.json
+msgctxt "Translate Message"
+msgid "Context"
+msgstr ""
+
+#. Description of the 'Context' (Data) field in DocType 'Translate Message'
+#. Description of the '🧙‍♂️ Wizard' (Link) field in DocType 'Translate Message'
+#. Description of the 'Source text' (HTML Editor) field in DocType 'Translate
+#. Message'
+#: frappe_translate/doctype/translate_message/translate_message.json
+msgctxt "Translate Message"
+msgid "DO NOT EDIT!"
+msgstr ""
+
+#. Label of a Section Break field in DocType 'Translate Wizard'
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgctxt "Translate Wizard"
+msgid "General"
+msgstr ""
+
+#. Label of a Button field in DocType 'Translate Wizard'
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgctxt "Translate Wizard"
+msgid "Generate main.pot file"
+msgstr ""
+
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:56
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:118
+msgid "Generate main.pot file: done"
+msgstr ""
+
+#. Label of a Link field in DocType 'Translate Wizard'
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgctxt "Translate Wizard"
+msgid "Language"
+msgstr ""
+
+#. Label of a Button field in DocType 'Translate Wizard'
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgctxt "Translate Wizard"
+msgid "Migrate .csv to .po"
+msgstr ""
+
+#. Label of a Button field in DocType 'Translate Wizard'
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgctxt "Translate Wizard"
+msgid "New .po file"
+msgstr ""
+
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:187
+msgid "Set wizard as default"
+msgstr ""
+
+#. Label of a HTML Editor field in DocType 'Translate Message'
+#: frappe_translate/doctype/translate_message/translate_message.json
+msgctxt "Translate Message"
+msgid "Source text"
+msgstr ""
+
+#. Label of a Section Break field in DocType 'Translate Wizard'
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgctxt "Translate Wizard"
+msgid "Step 1"
+msgstr ""
+
+#. Label of a Section Break field in DocType 'Translate Wizard'
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgctxt "Translate Wizard"
+msgid "Step 2"
+msgstr ""
+
+#. Label of a Section Break field in DocType 'Translate Wizard'
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgctxt "Translate Wizard"
+msgid "Step 3"
+msgstr ""
+
+#. Name of a role
+#: frappe_translate/doctype/translate_message/translate_message.json
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgid "System Manager"
+msgstr ""
+
+#. Label of a Select field in DocType 'Translate Wizard'
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgctxt "Translate Wizard"
+msgid "Target App"
+msgstr ""
+
+#. Name of a Workspace
+#: frappe_translate/workspace/translate/translate.json
+msgid "Translate"
+msgstr ""
+
+#. Name of a DocType
+#: frappe_translate/doctype/translate_message/translate_message.json
+msgid "Translate Message"
+msgstr ""
+
+#. Label of a shortcut in the Translate Workspace
+#: frappe_translate/workspace/translate/translate.json
+msgctxt "Translate Message"
+msgid "Translate Messages"
+msgstr ""
+
+#. Name of a DocType
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgid "Translate Wizard"
+msgstr ""
+
+#. Label of a HTML Editor field in DocType 'Translate Message'
+#: frappe_translate/doctype/translate_message/translate_message.json
+msgctxt "Translate Message"
+msgid "Translation"
+msgstr ""
+
+#. Label of a Button field in DocType 'Translate Wizard'
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgctxt "Translate Wizard"
+msgid "Update .po file"
+msgstr ""
+
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:134
+msgid "Update .po file: done"
+msgstr ""
+
+#. Label of a Code field in DocType 'Translate Message'
+#: frappe_translate/doctype/translate_message/translate_message.json
+msgctxt "Translate Message"
+msgid "auto_comments"
+msgstr ""
+
+#. Label of a Tab Break field in DocType 'Translate Message'
+#: frappe_translate/doctype/translate_message/translate_message.json
+msgctxt "Translate Message"
+msgid "dev"
+msgstr ""
+
+#. Label of a Int field in DocType 'Translate Message'
+#: frappe_translate/doctype/translate_message/translate_message.json
+msgctxt "Translate Message"
+msgid "lineno"
+msgstr ""
+
+#. Label of a Code field in DocType 'Translate Message'
+#: frappe_translate/doctype/translate_message/translate_message.json
+msgctxt "Translate Message"
+msgid "locations"
+msgstr ""
+
+#. Label of a Code field in DocType 'Translate Message'
+#: frappe_translate/doctype/translate_message/translate_message.json
+msgctxt "Translate Message"
+msgid "user_comments"
+msgstr ""
+
+#. Label of a Link field in DocType 'Translate Message'
+#: frappe_translate/doctype/translate_message/translate_message.json
+msgctxt "Translate Message"
+msgid "🧙‍♂️ Wizard"
+msgstr ""
+
