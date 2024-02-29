@@ -175,7 +175,18 @@ function compile_translations(frm) {
     });
 }
 
-
+function set_translate_statistic(frm) {
+    frappe.call({
+        method: "frappe_translate.frappe_translate.doctype.translate_wizard.translate_wizard.calc_translate_statisctics",
+        args: {
+            "app": frm.doc.target_app,
+            "locale": frm.doc.language,
+        },
+        callback: (r) => {
+            frm.dashboard.show_progress(__("Translate Progress"), (r.message.translated / r.message.total) * 100, r.message.text);
+        }
+    });
+}
 function navigate_to_messages(frm) {
     frm.add_custom_button(__("Go to translations"), () => {
         frappe.set_route("list", "Translate Message", {
@@ -199,6 +210,7 @@ frappe.ui.form.on("Translate Wizard", {
         fill_po_locales(frm);
         update_ui_info(frm);
         navigate_to_messages(frm);
+        set_translate_statistic(frm);
     },
     language(frm) {
         update_ui_info(frm);

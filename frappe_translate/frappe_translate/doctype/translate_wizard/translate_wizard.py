@@ -104,4 +104,23 @@ def compile_translations(target_app: str | None  = None, locale: str | None = No
     
 @frappe.whitelist()
 def set_user_project(wizard: str):
-    frappe.cache.hset("translate_wizard", frappe.session.user, wizard)
+    frappe.cache.hset("translate_wizard", frappe.session.user, wizard) 
+
+@frappe.whitelist()
+def calc_translate_statisctics(app: str, locale: str | None = None):
+    from frappe.gettext.translate import get_catalog
+    catalog: Catalog = get_catalog(app=app, locale=locale)
+    translated_count = 0
+    total = len(catalog)
+    for msg in catalog:
+        if msg.string:
+            translated_count += 1
+    percent = (translated_count / total) * 100
+    percent_str = '{:.2%}'.format(translated_count / total)
+    return {
+        "total": total,
+        "translated": translated_count,
+        "percent": percent,
+        "percent_str": percent_str,
+        "text": "Translated {0} of {1} ({2})".format(translated_count, total, percent_str),
+    }
