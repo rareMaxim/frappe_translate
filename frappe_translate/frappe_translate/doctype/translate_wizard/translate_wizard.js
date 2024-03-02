@@ -140,18 +140,18 @@ function update_po(frm) {
 
 function csv_to_po(frm) {
     frappe.call({
-        method: "frappe_translate.frappe_translate.doctype.translate_wizard.translate_wizard.csv_to_po",
+        method: "frappe_translate.frappe_translate.doctype.translate_wizard.translate_wizard.convert_csv_to_po",
         args: {
-            "app": frm.doc.target_app,
-            "locale": frm.doc.language,
+            "application": frm.doc.target_app,
+            "language": frm.doc.language,
         },
         callback: (r) => {
             console.log(r);
-            var msg = r.message.method + ": " + r.message.app + " " + r.message.locale;
-            if (!r.message.is_ok) msg = msg + "</br>" + r.message.error;
+            var msg = r.message.method + ": " + r.message.application + " " + r.message.language;
+            if (!r.message.is_successful) msg = msg + "</br>" + r.message.error;
             frappe.show_alert({
                 message: msg,
-                indicator: r.message.is_ok ? 'green' : 'red'
+                indicator: r.message.is_successful ? 'green' : 'red'
             }, 5);
         }
     });
