@@ -7,14 +7,26 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Frappe Translate VERSION\n"
 "Report-Msgid-Bugs-To: maks4a@gmail.com\n"
-"POT-Creation-Date: 2024-02-28 10:26+0000\n"
-"PO-Revision-Date: 2024-02-28 10:26+0000\n"
+"POT-Creation-Date: 2024-03-03 00:21+0202\n"
+"PO-Revision-Date: 2024-03-03 00:21+0202\n"
 "Last-Translator: maks4a@gmail.com\n"
 "Language-Team: maks4a@gmail.com\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.13.1\n"
+
+#. Label of a Button field in DocType 'Translate Wizard'
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgctxt "Translate Wizard"
+msgid "Backup .po file"
+msgstr ""
+
+#. Label of a Data field in DocType 'Translate Wizard'
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgctxt "Translate Wizard"
+msgid "Charset"
+msgstr ""
 
 #. Label of a Section Break field in DocType 'Translate Message'
 #: frappe_translate/doctype/translate_message/translate_message.json
@@ -38,6 +50,18 @@ msgctxt "Translate Message"
 msgid "Context"
 msgstr ""
 
+#. Label of a Data field in DocType 'Translate Wizard'
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgctxt "Translate Wizard"
+msgid "Copyright holder"
+msgstr ""
+
+#. Label of a Datetime field in DocType 'Translate Wizard'
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgctxt "Translate Wizard"
+msgid "Creation Date"
+msgstr ""
+
 #. Description of the 'Context' (Data) field in DocType 'Translate Message'
 #. Description of the '🧙‍♂️ Wizard' (Link) field in DocType 'Translate Message'
 #. Description of the 'Source text' (HTML Editor) field in DocType 'Translate
@@ -45,6 +69,12 @@ msgstr ""
 #: frappe_translate/doctype/translate_message/translate_message.json
 msgctxt "Translate Message"
 msgid "DO NOT EDIT!"
+msgstr ""
+
+#. Label of a Data field in DocType 'Translate Wizard'
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgctxt "Translate Wizard"
+msgid "Domain"
 msgstr ""
 
 #. Label of a Section Break field in DocType 'Translate Wizard'
@@ -64,10 +94,19 @@ msgstr ""
 msgid "Generate main.pot file: done"
 msgstr ""
 
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:191
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:196
+msgid "Go to translations"
+msgstr ""
+
 #. Label of a Link field in DocType 'Translate Wizard'
 #: frappe_translate/doctype/translate_wizard/translate_wizard.json
 msgctxt "Translate Wizard"
 msgid "Language"
+msgstr ""
+
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:217
+msgid "Make backup: done"
 msgstr ""
 
 #. Label of a Button field in DocType 'Translate Wizard'
@@ -82,8 +121,10 @@ msgctxt "Translate Wizard"
 msgid "New .po file"
 msgstr ""
 
-#: frappe_translate/doctype/translate_wizard/translate_wizard.js:187
-msgid "Set wizard as default"
+#. Label of a Tab Break field in DocType 'Translate Wizard'
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgctxt "Translate Wizard"
+msgid "Project Info"
 msgstr ""
 
 #. Label of a HTML Editor field in DocType 'Translate Message'
@@ -138,6 +179,10 @@ msgctxt "Translate Message"
 msgid "Translate Messages"
 msgstr ""
 
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:186
+msgid "Translate Progress"
+msgstr ""
+
 #. Name of a DocType
 #: frappe_translate/doctype/translate_wizard/translate_wizard.json
 msgid "Translate Wizard"
@@ -159,6 +204,12 @@ msgstr ""
 msgid "Update .po file: done"
 msgstr ""
 
+#. Label of a Data field in DocType 'Translate Wizard'
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgctxt "Translate Wizard"
+msgid "Version"
+msgstr ""
+
 #. Label of a Code field in DocType 'Translate Message'
 #: frappe_translate/doctype/translate_message/translate_message.json
 msgctxt "Translate Message"
@@ -171,6 +222,24 @@ msgctxt "Translate Message"
 msgid "dev"
 msgstr ""
 
+#. Label of a Small Text field in DocType 'Translate Wizard'
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgctxt "Translate Wizard"
+msgid "header_comment"
+msgstr ""
+
+#. Label of a Data field in DocType 'Translate Wizard'
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgctxt "Translate Wizard"
+msgid "language_team"
+msgstr ""
+
+#. Label of a Data field in DocType 'Translate Wizard'
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgctxt "Translate Wizard"
+msgid "last_translator"
+msgstr ""
+
 #. Label of a Int field in DocType 'Translate Message'
 #: frappe_translate/doctype/translate_message/translate_message.json
 msgctxt "Translate Message"
@@ -181,6 +250,18 @@ msgstr ""
 #: frappe_translate/doctype/translate_message/translate_message.json
 msgctxt "Translate Message"
 msgid "locations"
+msgstr ""
+
+#. Label of a Data field in DocType 'Translate Wizard'
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgctxt "Translate Wizard"
+msgid "project"
+msgstr ""
+
+#. Label of a Datetime field in DocType 'Translate Wizard'
+#: frappe_translate/doctype/translate_wizard/translate_wizard.json
+msgctxt "Translate Wizard"
+msgid "revision_date"
 msgstr ""
 
 #. Label of a Code field in DocType 'Translate Message'
