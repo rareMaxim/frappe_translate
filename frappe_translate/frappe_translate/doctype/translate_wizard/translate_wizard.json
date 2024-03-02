@@ -16,6 +16,7 @@
   "btn_new_po",
   "column_break_zryk",
   "btn_update_po",
+  "backup_btn",
   "column_break_ltse",
   "btn_csv_to_po",
   "step_3_section",
@@ -197,11 +198,16 @@
    "fieldtype": "Data",
    "is_virtual": 1,
    "label": "last_translator"
+  },
+  {
+   "fieldname": "backup_btn",
+   "fieldtype": "Button",
+   "label": "Backup .po file"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-02 17:43:29.955826",
+ "modified": "2024-03-02 23:39:01.700428",
  "modified_by": "Administrator",
  "module": "Frappe Translate",
  "name": "Translate Wizard",

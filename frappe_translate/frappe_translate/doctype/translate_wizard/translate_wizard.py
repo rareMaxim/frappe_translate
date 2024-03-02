@@ -1,6 +1,8 @@
 # Copyright (c) 2024, Maxim S and contributors
 # For license information, please see license.txt
 
+import datetime
+from pathlib import Path
 import frappe
 from frappe.model.document import Document
 from babel.messages.catalog import Catalog
@@ -224,3 +226,26 @@ def calculate_translation_statistics(app: str, locale: str | None = None) -> dic
         "percent_str": percent_str,
         "text": "Translated {} of {} ({})".format(translated_count, total, percent_str),
     }
+
+
+@frappe.whitelist()
+def backup_po(app: str, project: str, locale: str | None = None):
+    from frappe.core.doctype.file.file import File
+
+    po_file: Path = Path(get_po_path(app, locale)["path"])
+    print(po_file)
+    with open(po_file, "rb") as f:
+        file_content = f.read()
+    datestr = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+    file: File = frappe.get_doc(
+        {
+            "doctype": "File",
+            "attached_to_doctype": "Translate Wizard",
+            "attached_to_name": project,
+            "file_name": f"{locale}_{datestr}.po",
+            "content": file_content,
+            "is_private": 1,
+        }
+    )
+    file.insert()
+    return file.as_json()

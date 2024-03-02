@@ -204,6 +204,22 @@ function update_ui_info(frm) {
         get_csv_path(frm);
     }
 }
+function make_backup_po(frm) {
+    frappe.call({
+        method: "frappe_translate.frappe_translate.doctype.translate_wizard.translate_wizard.backup_po",
+        args: {
+            "app": frm.doc.target_app,
+            "project": frm.doc.name,
+            "locale": frm.doc.language,
+        },
+        callback: (r) => {
+            frappe.show_alert({
+                message: __('Make backup: done'),
+                indicator: 'green'
+            }, 5);
+        }
+    });
+}
 frappe.ui.form.on("Translate Wizard", {
     refresh(frm) {
         fill_installed_app(frm);
@@ -234,4 +250,5 @@ frappe.ui.form.on("Translate Wizard", {
     btn_csv_to_po(frm) {
         csv_to_po(frm)
     },
+    backup_btn(frm) {make_backup_po(frm)},
 });
