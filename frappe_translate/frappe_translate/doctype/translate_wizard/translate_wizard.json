@@ -19,17 +19,36 @@
   "column_break_ltse",
   "btn_csv_to_po",
   "step_3_section",
-  "btn_compile_translations"
+  "btn_compile_translations",
+  "project_info_tab",
+  "project",
+  "column_break_cpic",
+  "version",
+  "section_break_qejw",
+  "creation_date",
+  "column_break_idjs",
+  "revision_date",
+  "section_break_tkze",
+  "copyright_holder",
+  "charset",
+  "column_break_dtnm",
+  "language_team",
+  "last_translator",
+  "section_break_jgvm",
+  "domain",
+  "header_comment"
  ],
  "fields": [
   {
    "fieldname": "target_app",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Target App"
   },
   {
    "fieldname": "language",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Language",
    "options": "Language"
   },
@@ -89,11 +108,100 @@
    "fieldname": "step_3_section",
    "fieldtype": "Section Break",
    "label": "Step 3"
+  },
+  {
+   "fieldname": "project_info_tab",
+   "fieldtype": "Tab Break",
+   "label": "Project Info"
+  },
+  {
+   "fieldname": "creation_date",
+   "fieldtype": "Datetime",
+   "is_virtual": 1,
+   "label": "Creation Date"
+  },
+  {
+   "fieldname": "charset",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Charset"
+  },
+  {
+   "fieldname": "copyright_holder",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Copyright holder"
+  },
+  {
+   "fieldname": "domain",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Domain"
+  },
+  {
+   "fieldname": "header_comment",
+   "fieldtype": "Small Text",
+   "is_virtual": 1,
+   "label": "header_comment"
+  },
+  {
+   "fieldname": "language_team",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "language_team"
+  },
+  {
+   "fieldname": "version",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Version"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "project"
+  },
+  {
+   "fieldname": "column_break_cpic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_tkze",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_qejw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_idjs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "revision_date",
+   "fieldtype": "Datetime",
+   "is_virtual": 1,
+   "label": "revision_date"
+  },
+  {
+   "fieldname": "column_break_dtnm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_jgvm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "last_translator",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "last_translator"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-28 20:51:30.825985",
+ "modified": "2024-03-02 17:43:29.955826",
  "modified_by": "Administrator",
  "module": "Frappe Translate",
  "name": "Translate Wizard",

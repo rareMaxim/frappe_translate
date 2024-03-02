@@ -177,7 +177,7 @@ function compile_translations(frm) {
 
 function set_translate_statistic(frm) {
     frappe.call({
-        method: "frappe_translate.frappe_translate.doctype.translate_wizard.translate_wizard.calc_translate_statisctics",
+        method: "frappe_translate.frappe_translate.doctype.translate_wizard.translate_wizard.calculate_translation_statistics",
         args: {
             "app": frm.doc.target_app,
             "locale": frm.doc.language,
