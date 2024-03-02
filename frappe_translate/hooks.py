@@ -2,6 +2,7 @@ app_name = "frappe_translate"
 app_title = "Frappe Translate"
 app_publisher = "Maxim S"
 app_description = "App for translate Frappe Framework and other apps"
+source_link = "https://github.com/rareMaxim/frappe_translate"
 app_email = "maks4a@gmail.com"
 app_license = "mit"
 # required_apps = []
