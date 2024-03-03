@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Frappe Translate VERSION\n"
 "Report-Msgid-Bugs-To: maks4a@gmail.com\n"
-"POT-Creation-Date: 2024-03-03 00:21+0202\n"
-"PO-Revision-Date: 2024-03-03 00:21+0202\n"
+"POT-Creation-Date: 2024-03-03 10:22+0202\n"
+"PO-Revision-Date: 2024-03-03 10:22+0202\n"
 "Last-Translator: maks4a@gmail.com\n"
 "Language-Team: maks4a@gmail.com\n"
 "MIME-Version: 1.0\n"
@@ -40,8 +40,8 @@ msgctxt "Translate Wizard"
 msgid "Compile Translation"
 msgstr ""
 
-#: frappe_translate/doctype/translate_wizard/translate_wizard.js:171
-msgid "Compile translation: done"
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:157
+msgid "Compile translation"
 msgstr ""
 
 #. Label of a Data field in DocType 'Translate Message'
@@ -83,19 +83,19 @@ msgctxt "Translate Wizard"
 msgid "General"
 msgstr ""
 
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:42
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:104
+msgid "Generate main.pot file"
+msgstr ""
+
 #. Label of a Button field in DocType 'Translate Wizard'
 #: frappe_translate/doctype/translate_wizard/translate_wizard.json
 msgctxt "Translate Wizard"
 msgid "Generate main.pot file"
 msgstr ""
 
-#: frappe_translate/doctype/translate_wizard/translate_wizard.js:56
-#: frappe_translate/doctype/translate_wizard/translate_wizard.js:118
-msgid "Generate main.pot file: done"
-msgstr ""
-
-#: frappe_translate/doctype/translate_wizard/translate_wizard.js:191
-#: frappe_translate/doctype/translate_wizard/translate_wizard.js:196
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:177
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:182
 msgid "Go to translations"
 msgstr ""
 
@@ -105,8 +105,8 @@ msgctxt "Translate Wizard"
 msgid "Language"
 msgstr ""
 
-#: frappe_translate/doctype/translate_wizard/translate_wizard.js:217
-msgid "Make backup: done"
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:203
+msgid "Make backup"
 msgstr ""
 
 #. Label of a Button field in DocType 'Translate Wizard'
@@ -179,7 +179,7 @@ msgctxt "Translate Message"
 msgid "Translate Messages"
 msgstr ""
 
-#: frappe_translate/doctype/translate_wizard/translate_wizard.js:186
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:172
 msgid "Translate Progress"
 msgstr ""
 
@@ -194,14 +194,14 @@ msgctxt "Translate Message"
 msgid "Translation"
 msgstr ""
 
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:120
+msgid "Update .po file"
+msgstr ""
+
 #. Label of a Button field in DocType 'Translate Wizard'
 #: frappe_translate/doctype/translate_wizard/translate_wizard.json
 msgctxt "Translate Wizard"
 msgid "Update .po file"
-msgstr ""
-
-#: frappe_translate/doctype/translate_wizard/translate_wizard.js:134
-msgid "Update .po file: done"
 msgstr ""
 
 #. Label of a Data field in DocType 'Translate Wizard'
@@ -220,6 +220,14 @@ msgstr ""
 #: frappe_translate/doctype/translate_message/translate_message.json
 msgctxt "Translate Message"
 msgid "dev"
+msgstr ""
+
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:42
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:104
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:120
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:157
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:203
+msgid "done"
 msgstr ""
 
 #. Label of a Small Text field in DocType 'Translate Wizard'

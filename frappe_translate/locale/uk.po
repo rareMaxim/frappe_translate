@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Frappe Translate VERSION\n"
 "Report-Msgid-Bugs-To: maks4a@gmail.com\n"
-"POT-Creation-Date: 2024-03-03 00:21+0202\n"
+"POT-Creation-Date: 2024-03-03 10:22+0202\n"
 "PO-Revision-Date: 2024-02-28 10:21+0000\n"
 "Last-Translator: maks4a@gmail.com\n"
 "Language: uk\n"
@@ -43,9 +43,10 @@ msgctxt "Translate Wizard"
 msgid "Compile Translation"
 msgstr "Компілювати переклад"
 
-#: frappe_translate/doctype/translate_wizard/translate_wizard.js:171
-msgid "Compile translation: done"
-msgstr "Компіляція перекладу: Успішно"
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:157
+#, fuzzy
+msgid "Compile translation"
+msgstr "Компілювати переклад"
 
 #. Label of a Data field in DocType 'Translate Message'
 #: frappe_translate/doctype/translate_message/translate_message.json
@@ -86,22 +87,23 @@ msgctxt "Translate Wizard"
 msgid "General"
 msgstr "Головне"
 
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:42
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:104
+#, fuzzy
+msgid "Generate main.pot file"
+msgstr "Створити файл main.pot"
+
 #. Label of a Button field in DocType 'Translate Wizard'
 #: frappe_translate/doctype/translate_wizard/translate_wizard.json
 msgctxt "Translate Wizard"
 msgid "Generate main.pot file"
 msgstr "Створити файл main.pot"
 
-#: frappe_translate/doctype/translate_wizard/translate_wizard.js:56
-#: frappe_translate/doctype/translate_wizard/translate_wizard.js:118
-msgid "Generate main.pot file: done"
-msgstr "Успішно створено файл main.pot"
-
-#: frappe_translate/doctype/translate_wizard/translate_wizard.js:191
-#: frappe_translate/doctype/translate_wizard/translate_wizard.js:196
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:177
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:182
 #, fuzzy
 msgid "Go to translations"
-msgstr "Компілювати переклад"
+msgstr "Перейти до перекладу"
 
 #. Label of a Link field in DocType 'Translate Wizard'
 #: frappe_translate/doctype/translate_wizard/translate_wizard.json
@@ -109,9 +111,9 @@ msgctxt "Translate Wizard"
 msgid "Language"
 msgstr "Мова"
 
-#: frappe_translate/doctype/translate_wizard/translate_wizard.js:217
-msgid "Make backup: done"
-msgstr "Створення бекапу: Успіх"
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:203
+msgid "Make backup"
+msgstr "Створення бекапу"
 
 #. Label of a Button field in DocType 'Translate Wizard'
 #: frappe_translate/doctype/translate_wizard/translate_wizard.json
@@ -185,10 +187,10 @@ msgctxt "Translate Message"
 msgid "Translate Messages"
 msgstr "Перекласти повідомлення"
 
-#: frappe_translate/doctype/translate_wizard/translate_wizard.js:186
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:172
 #, fuzzy
 msgid "Translate Progress"
-msgstr "Переклад"
+msgstr "Статистика перекладу"
 
 #. Name of a DocType
 #: frappe_translate/doctype/translate_wizard/translate_wizard.json
@@ -201,15 +203,16 @@ msgctxt "Translate Message"
 msgid "Translation"
 msgstr "Переклад"
 
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:120
+#, fuzzy
+msgid "Update .po file"
+msgstr "Оновити файл .po"
+
 #. Label of a Button field in DocType 'Translate Wizard'
 #: frappe_translate/doctype/translate_wizard/translate_wizard.json
 msgctxt "Translate Wizard"
 msgid "Update .po file"
 msgstr "Оновити файл .po"
-
-#: frappe_translate/doctype/translate_wizard/translate_wizard.js:134
-msgid "Update .po file: done"
-msgstr "Успішно оновлено файлу.po"
 
 #. Label of a Data field in DocType 'Translate Wizard'
 #: frappe_translate/doctype/translate_wizard/translate_wizard.json
@@ -229,26 +232,35 @@ msgctxt "Translate Message"
 msgid "dev"
 msgstr "Інше"
 
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:42
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:104
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:120
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:157
+#: frappe_translate/doctype/translate_wizard/translate_wizard.js:203
+#, fuzzy
+msgid "done"
+msgstr "Успішно"
+
 #. Label of a Small Text field in DocType 'Translate Wizard'
 #: frappe_translate/doctype/translate_wizard/translate_wizard.json
 #, fuzzy
 msgctxt "Translate Wizard"
 msgid "header_comment"
-msgstr "Користувацькі коментарі"
+msgstr "Коментар до файлу перекладу"
 
 #. Label of a Data field in DocType 'Translate Wizard'
 #: frappe_translate/doctype/translate_wizard/translate_wizard.json
 #, fuzzy
 msgctxt "Translate Wizard"
 msgid "language_team"
-msgstr "Мова"
+msgstr "Команда з перекладу"
 
 #. Label of a Data field in DocType 'Translate Wizard'
 #: frappe_translate/doctype/translate_wizard/translate_wizard.json
 #, fuzzy
 msgctxt "Translate Wizard"
 msgid "last_translator"
-msgstr "Переклад"
+msgstr "Переклав в останне"
 
 #. Label of a Int field in DocType 'Translate Message'
 #: frappe_translate/doctype/translate_message/translate_message.json
