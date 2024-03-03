@@ -29,20 +29,6 @@ function fill_po_locales(frm) {
     });
 }
 
-function test_catalog(frm) {
-    frappe.call({
-        method: "frappe_translate.frappe_translate.doctype.translate_wizard.translate_wizard.get_translate_catalog",
-        args: {
-            "app": frm.doc.target_app,
-        },
-        callback: (r) => {
-            console.log(r);
-            // if (r.message) {
-            //     frm.set_df_property("app_translate", "options", [""].concat(r.message));
-            // }
-        }
-    });
-}
 
 function generate_pot(frm) {
     frappe.call({
@@ -53,7 +39,7 @@ function generate_pot(frm) {
         callback: (r) => {
             console.log(r);
             frappe.show_alert({
-                message: __('Generate main.pot file: done'),
+                message: __('Generate main.pot file') + ': ' + __('done'),
                 indicator: 'green'
             }, 5);
             get_pot_path(frm);
@@ -115,7 +101,7 @@ function new_po(frm) {
             get_po_path(frm);
             console.log(r);
             frappe.show_alert({
-                message: __('Generate main.pot file: done'),
+                message: __('Generate main.pot file') + ': ' + __('done'),
                 indicator: 'green'
             }, 5);
         }
@@ -131,7 +117,7 @@ function update_po(frm) {
         callback: (r) => {
             console.log(r);
             frappe.show_alert({
-                message: __('Update .po file: done'),
+                message: __('Update .po file') + ': ' + __('done'),
                 indicator: 'green'
             }, 5);
         }
@@ -168,7 +154,7 @@ function compile_translations(frm) {
         callback: (r) => {
             console.log(r);
             frappe.show_alert({
-                message: __('Compile translation: done'),
+                message: __('Compile translation') + ': ' + __('done'),
                 indicator: 'green'
             }, 5);
         }
@@ -193,7 +179,7 @@ function navigate_to_messages(frm) {
             wizard: frm.doc.name,
         });
     });
-    frm.change_custom_button_type(__("Go to translations"), null, 'primary');
+    frm.change_custom_button_type(__('Go to translations'), null, 'primary');
 
 }
 
@@ -214,7 +200,7 @@ function make_backup_po(frm) {
         },
         callback: (r) => {
             frappe.show_alert({
-                message: __('Make backup: done'),
+                message: __('Make backup') + ': ' + __('done'),
                 indicator: 'green'
             }, 5);
         }
@@ -250,5 +236,5 @@ frappe.ui.form.on("Translate Wizard", {
     btn_csv_to_po(frm) {
         csv_to_po(frm)
     },
-    backup_btn(frm) {make_backup_po(frm)},
+    backup_btn(frm) { make_backup_po(frm) },
 });

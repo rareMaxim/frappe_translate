@@ -215,7 +215,7 @@ def calculate_translation_statistics(app: str, locale: str | None = None) -> dic
                     text: A string with a readable version of the translation progress.
     """
     catalog = get_catalog(app=app, locale=locale)
-    translated_count = sum(1 for msg in catalog if msg.string)
+    translated_count = sum(1 for msg in catalog if msg.string if msg.id)
     total = len(catalog)
     percent = translated_count / total
     percent_str = "{:.2%}".format(percent)
