@@ -115,11 +115,11 @@ function update_po(frm) {
             "locale": frm.doc.language,
         },
         callback: (r) => {
-            console.log(r);
             frappe.show_alert({
                 message: __('Update .po file') + ': ' + __('done'),
                 indicator: 'green'
             }, 5);
+            set_translate_statistic(frm);
         }
     });
 }
@@ -132,13 +132,13 @@ function csv_to_po(frm) {
             "language": frm.doc.language,
         },
         callback: (r) => {
-            console.log(r);
             var msg = r.message.method + ": " + r.message.application + " " + r.message.language;
             if (!r.message.is_successful) msg = msg + "</br>" + r.message.error;
             frappe.show_alert({
                 message: msg,
                 indicator: r.message.is_successful ? 'green' : 'red'
             }, 5);
+            set_translate_statistic(frm);
         }
     });
 }
@@ -157,11 +157,13 @@ function compile_translations(frm) {
                 message: __('Compile translation') + ': ' + __('done'),
                 indicator: 'green'
             }, 5);
+            set_translate_statistic(frm);
         }
     });
 }
 
 function set_translate_statistic(frm) {
+    if ((!frm.doc.target_app) || (!frm.doc.language)) return;
     frappe.call({
         method: "frappe_translate.frappe_translate.doctype.translate_wizard.translate_wizard.calculate_translation_statistics",
         args: {

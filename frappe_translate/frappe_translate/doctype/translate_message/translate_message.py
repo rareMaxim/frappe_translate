@@ -87,7 +87,6 @@ class TranslateMessage(Document):
         wizard = update_selected_wizard(args)
         filters = args.get("filters")
         catalog = TranslateMessage.get_catalog()
-        catalog.creation_date
         if not catalog:
             return None
         messages = [

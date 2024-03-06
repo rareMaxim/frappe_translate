@@ -217,6 +217,14 @@ def calculate_translation_statistics(app: str, locale: str | None = None) -> dic
     catalog = get_catalog(app=app, locale=locale)
     translated_count = sum(1 for msg in catalog if msg.string if msg.id)
     total = len(catalog)
+    if total == 0:
+        return {
+        "total": total,
+        "translated": 0,
+        "percent": 0,
+        "percent_str": "0%",
+        "text": "Not found translation. Check .po file",
+        }
     percent = translated_count / total
     percent_str = "{:.2%}".format(percent)
     return {
